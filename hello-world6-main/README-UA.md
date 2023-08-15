@@ -15,7 +15,7 @@
 
 1. Перейдіть на вкладку [Solution Explorer](https://docs.microsoft.com/ru-ua/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer).
      * Виберіть елемент меню - _View\Solution Explorer_.
-     * Або використовуйте клавіші - _Ctrl+Alt+L_ (сполучення клавіш можуть відрізнятися в різних версіях Visual Studio. Див. статтю [Поєднання клавіш у Visual Studio](https://docs.microsoft.com/ru-ru/visualstudio/ide /default-keyboard-shortcuts-in-visual-studio)).
+     * Або використовуйте клавіші - _Ctrl+Alt+L_ (сполучення клавіш можуть відрізнятися в різних версіях Visual Studio. Див. статтю [Поєднання клавіш у Visual Studio](https://docs.microsoft.com/ru-ru/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)).
 
 ![View Solution Explorer](images/view-solution-explorer.png)
 
