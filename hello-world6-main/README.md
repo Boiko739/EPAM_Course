@@ -2,7 +2,7 @@
 
 Beginner level task for practicing AutoCode task management and running unit tests in Visual Studio.
 
-Translations: [Ukrainian](README-RU.md).
+Translations: [Ukrainian](README-UA.md).
 
 Estimated time to complete the task - 0.5h.
 
