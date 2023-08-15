@@ -2,7 +2,7 @@
 
 Beginner level task for practicing AutoCode task management and running unit tests in Visual Studio.
 
-Translations: [Russian](README-RU.md).
+Translations: [Ukrainian](README-RU.md).
 
 Estimated time to complete the task - 0.5h.
 
@@ -11,7 +11,7 @@ The task requires .NET 6 SDK installed.
 
 ## Task Description
 
-This task doesn’t require coding. The goal is to get familiar with basic functions of Visual Studio.
+This task doesn’t require coding. The goal is to get familiar with the basic functions of Visual Studio.
 
 1. Open a [Solution Explorer](https://docs.microsoft.com/en-us/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer).
     * Click on the menu item - _View\Solution Explorer_.
@@ -27,7 +27,7 @@ This task doesn’t require coding. The goal is to get familiar with basic funct
 
 ![SimpleHelloWorld.cs](images/simple-hello-world.png)
 
-4. Open the "HelloWorld.Tests" project and find [SimpleHelloWorldTests.cs](HelloWorld.Tests/SimpleHelloWorldTests.cs) file in the project. Open the file in the editor window.
+4. Open the "HelloWorld.Tests" project and find the [SimpleHelloWorldTests.cs](HelloWorld.Tests/SimpleHelloWorldTests.cs) file in the project. Open the file in the editor window.
 
 ![SimpleHelloWorldTests.cs](images/simple-hello-world-tests.png)
 
@@ -53,7 +53,7 @@ Make sure there are no compiler issues (warnings or errors).
 
 ![Test Explorer](images/test-test-explorer.png)
 
-All tests in the test list have blue icon with a white exclamation mark. It means that the unit tests were not run.
+All tests in the test list have blue icons with a white exclamation mark. It means that the unit tests were not run.
 
 ![Test Explorer](images/test-explorer-white.png)
 
@@ -73,7 +73,7 @@ All list items should be marked "GREEN".
 
 10. Run all unit tests.
     * Click on the menu item - _Test\Run All Tests_.
-    * Or use the defaul keyboard shortcut - _Ctrl+R, A_.
+    * Or use the default keyboard shortcut - _Ctrl+R, A_.
 
 ![Run All Tests](images/run-all-tests.png)
 
