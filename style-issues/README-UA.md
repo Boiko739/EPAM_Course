@@ -4,29 +4,29 @@
 
 Переклади: [Англійська](README.md).
 
-Час виконання завдання - 1h.
+Час виконання завдання - 1г.
 
-Для складання проєктів потрібен встановлений .NET 6 SDK.
+Для будування проєктів потрібен встановлений .NET 6 SDK.
 
 
 ## Опис завдання
 
-## Зауваження StyleCop
+### Зауваження StyleCop
 
-[Аналізатори StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) – це інструмент статичного аналізу коду, який використовується для пошуку в коді стилістичних помилок. StyleCop має [файл налаштувань](code-analysis.ruleset), в якому знаходиться список включених правил, і інструмент генерує помилку або попередження, якщо правило порушується. Документацію правил та роз'яснення умов застосування правил можна знайти в розділі документації StyleCop (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md).
+[StyleCop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) – це інструмент статичного аналізу коду, який використовується для пошуку в коді стилістичних помилок. StyleCop має [файл налаштувань](code-analysis.ruleset), в якому знаходиться список включених правил; інструмент генерує помилку або попередження, якщо правило порушується. Документацію правил та роз'яснення умов застосування правил можна знайти в [розділі документації StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md).
 
 
 ### SA1001
 
 1. [Зберіть рішення](https://docs.microsoft.com/en-us/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio).
      * Натисніть на пункт меню - _Build\Build Solution_.
-     * або використайте шорткат за замовчуванням - _Ctrl+Shift+B_ (в різних версіях Visual Studio можуть бути різні шорткати. Дивіться статтю [Keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)).
+     * або використайте поєднання клавіш за замовчуванням - _Ctrl+Shift+B_ (в різних версіях Visual Studio можуть бути різні поєднання клавіш. Дивіться статтю [Keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)).
 
 ![Зберіть рішення](images/build-solution.png)
 
 2. Відкрийте вікно [Error List](https://docs.microsoft.com/en-us/visualstudio/ide/find-and-fix-code-errors#review-the-error-list).
      * Натисніть на пункт меню - _View\Error List_.
-     * або використайте шорткат за замовчуванням - _Ctrl+\\, E_.
+     * або використайте поєднання клавіш за замовчуванням - _Ctrl+\\, E_.
 
 ![Відкрийте Error List](images/view-error-list.png)
 
@@ -36,7 +36,7 @@
 
 Ви будете направлені до сторінки з документацією.
 
-4. Клікніть двічі по SA1001, що міститься в вікні Error List.
+4. Клікніть двічі по рядку SA1001, що міститься в вікні Error List.
 
 ![Перейдіть до SA1001](images/navigate-to-sa1001.png)
 
@@ -44,15 +44,15 @@
 
 ![SA1001](images/sa1001.png)
 
-5. Прочитайте на сторінці з документацією (як виправити помилку)(https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1001.md#how-to-fix-violations): "Щоб виправити порушення цього правила, переконайтеся, що після коми стоїть один пробіл, а перед нею не стоїть пробіл."
+5. Прочитайте на сторінці з документацією [як виправити помилку](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1001.md#how-to-fix-violations): "Щоб виправити помилку, переконайтеся, що після коми стоїть один пробіл, а перед нею не стоїть пробіл."
 
-6. Зтріть пробіл перед комою в списку параметрів методу.
+6. Стріть пробіл перед комою в списку параметрів методу.
 
 ```cs
 public static int Sum(int x, int y)
 ````
 
-7. Add a space after the comma.
+7. Додайте пробіл після коми.
 
 ```cs
 public static int Sum(int x, int y)
@@ -69,7 +69,7 @@ public static int Sum(int x, int y)
 
 ![SA1002](images/sa1002.png)
 
-1. Відкрийте вікно _Error List_ , знайдіть помилку SA1002.
+1. Відкрийте вікно _Error List_, знайдіть помилку SA1002.
 1. Відкрийте і прочитайте сторінку з документацією про помилку.
 1. Перейдіть до коду клікнувши по стрічці з помилкою в вікні _Error List_.
 1. Видаліть пробіл перед крапкою з комою.
@@ -88,28 +88,28 @@ public static int Sum(int x, int y)
 
 ![SA1008](images/sa1008.png)
 
-Виправте помилку видаленням пробілу перед і після відкритої круглої дужки.
+Виправте помилку видаленням пробілів перед і після відкритої круглої дужки.
 
 
 ### SA1025
 
 ![SA1025](images/sa1025.png)
 
-Виправте помилку видаленням лишніх символів пробілу.
+Виправте помилку видаленням лишніх пробілів.
 
 
 ### SA1028
 
 ![SA1028](images/sa1028.png)
 
-Виправте помилку видаленням лишніх символів пробілу в кінцях ліній.
+Виправте помилку видаленням лишніх пробілів в кінцях стрічок.
 
 
 ### SA1500
 
 ![SA1500](images/sa1500.png)
 
-Виправте помилку переставленням відкритих та закритих хвилястих дужок на нові лінії.
+Виправте помилку переставленням відкритих та закритих хвилястих дужок на нові стрічки.
 
 
 ### SA1505
@@ -130,9 +130,9 @@ public static int Sum(int x, int y)
 
 ![SA1508](images/sa1508.png)
 
-Виправте помилку видаленням пустих стрічок перед відкритими хвилястими дужками.
+Виправте помилку видаленням пустих стрічок перед закритими хвилястими дужками.
 
-Ви можете пройти до порталу AutoCode, відкрити сторінку завдання, і почати перевірку завдання.
+Ви можете пройти до порталу AutoCode, відкрити сторінку завдання і почати перевірку завдання.
 
 
 ## Roslyn Analyzers
@@ -144,7 +144,7 @@ public static int Sum(int x, int y)
 
 ![CA1304](images/ca1304.png)
 
-Виправте помилку додаванням параметру _InvariantCulture_ до виклику методу _ToUpper_.
+Виправте помилку доданням параметру _InvariantCulture_ до виклику методу _ToUpper_.
 
 ```cs
 public static string MyMethod(string str)
@@ -158,7 +158,7 @@ public static string MyMethod(string str)
 
 ![CA1305](images/ca1305.png)
 
-Виправте помилку додаванням параметру _InvariantCulture_ до виклику методу _ToUpper_.
+Виправте помилку доданням параметру _InvariantCulture_ до виклику методу _ToUpper_.
 
 ```cs
 public static string MyMethod(int i)
@@ -191,7 +191,7 @@ public static string MyMethod(string str)
 
 ![CA1707](images/ca1707.png)
 
-Виправте помилку видаленням нижнього прочерку з назви методу. Використовуйте [стандартів використання великих літер в C#](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions): _Pascal Casing_ для назв методів і _Camel Casing_ для назв параметрів.
+Виправте помилку видаленням нижньої риски з назви методу. Використовуйте [стандарти використання великих літер в C#](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions): _Pascal Casing_ для назв методів і _Camel Casing_ для назв параметрів.
 
 ```cs
 public static string MyMethod(string myStr)
@@ -203,7 +203,7 @@ public static string MyMethod(string myStr)
 
 ## Виправте зауваження компілятора
 
-Додаткові перевірки стилю та коду ввімкнено для проектів у цьому рішенні, щоб допомогти вам підтримувати узгодженість вихідного коду проекту та уникати безглуздих помилок. [Перегляньте список помилок](https://docs.microsoft.com/ru-ru/visualstudio/ide/find-and-fix-code-errors#review-the-error-List) у Visual Studio, щоб побачити всі попередження та помилки компілятора.
+Додаткові перевірки стилю та коду ввімкнено для проєктів у цьому рішенні, щоб допомогти вам підтримувати узгодженість вихідного коду проєкту та уникати безглуздих помилок. [Перегляньте список помилок](https://docs.microsoft.com/ru-ru/visualstudio/ide/find-and-fix-code-errors#review-the-error-List) у Visual Studio, щоб побачити всі попередження та помилки компілятора.
 
 Якщо повідомлення про помилку або попередження компілятора поставило Вас у глухий кут, [відкрийте сторінку документації помилки або попередження](https://docs.microsoft.com/ru-ua/visualstudio/ide/find-and-fix-code-errors#review-errors-in-detail) або загугліть код помилки в пошуковій системі.
 
@@ -217,7 +217,7 @@ public static string MyMethod(string myStr)
 
 ![Output and Error List](images/rebuild-solution-output-error-list.png)
 
-3. Запустіть всі юніт тести. Переконайтеся, що всі пройдені успішно.
+3. Запустіть всі юніт тести. Переконайтеся, що всі вони пройдені успішно.
 
 ![Test Explorer](images/test-explorer.png)
 
@@ -246,4 +246,4 @@ public static string MyMethod(string myStr)
 
 * Visual Studio
    * [Початок роботи з Visual Studio 2019](https://www.youtube.com/watch?v=1CgsMtUmVgs)
-   * [Шорткати за замовчуванням у Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)
+   * [Поєднання клавіш за замовчуванням у Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio)
