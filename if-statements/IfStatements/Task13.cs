@@ -8,8 +8,7 @@
             {
                 return 10;
             }
-
-            if (b)
+            else if (b)
             {
                 if (i > -5 && i < 4)
                 {

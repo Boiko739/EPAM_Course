@@ -4,12 +4,15 @@
     {
         public static int DoSomething(bool b1, bool b2, int i)
         {
+            bool trueTrue = b1 && b2;
+            bool trueFalse = b1 && !b2;
+            bool falseTrue = !b1 && b2;
+
             if (i == 0)
             {
                 return i;
             }
-
-            if (b1 && b2)
+            else if (trueTrue)
             {
                 if (i > -5)
                 {
@@ -20,7 +23,7 @@
                     return (-(i % 5) * 2) - ((i / 5) * 10) + 10;
                 }
             }
-            else if (b1 && !b2)
+            else if (trueFalse)
             {
                 if (i > -5 && i < 6)
                 {
@@ -31,7 +34,7 @@
                     return i * i * i;
                 }
             }
-            else if (!b1 && b2)
+            else if (falseTrue)
             {
                 if (i > -8 && i < -3)
                 {
@@ -42,7 +45,7 @@
                     return -i;
                 }
             }
-            else if (!b1 && !b2)
+            else
             {
                 if (i > -4 && i < 5)
                 {
