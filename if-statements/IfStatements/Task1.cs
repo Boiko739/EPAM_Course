@@ -4,6 +4,18 @@
     {
         public static int DoSomething(int i)
         {
+            int result = i;
+
+            if (i < 0)
+            {
+                result = 0;
+            }
+
+            return result;
+        }
+
+        public static int DoSomething1(int i)
+        {
             return i < 0 ? 0 : i;
         }
     }

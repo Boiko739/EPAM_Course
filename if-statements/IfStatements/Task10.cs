@@ -4,6 +4,80 @@
     {
         public static int DoSomething(bool b1, bool b2, int i)
         {
+            var result = i;
+            if (b1)
+            {
+                if (i == 0)
+                {
+                    result = -1;
+                }
+                else if (i >= 2 && i <= 9)
+                {
+                    if (b2)
+                    {
+                        result = 10 - result;
+                    }
+                    else
+                    {
+                        result += 10;
+                    }
+                }
+                else if (i <= -2 && i >= -9)
+                {
+                    if (b2)
+                    {
+                        result += 5;
+                    }
+                    else
+                    {
+                        result = 5 - result;
+                    }
+                }
+            }
+            else
+            {
+                if (i == 0)
+                {
+                    if (b2)
+                    {
+                        result = 1;
+                    }
+                    else
+                    {
+                        result = -1;
+                    }
+                }
+                else if (b2)
+                {
+                    if (i <= -10 || i >= 10)
+                    {
+                        result += 1;
+                    }
+                }
+                else if (i <= -10 || i >= 10)
+                {
+                    result -= 1;
+                }
+
+                if (i != 0 && i > -5 && i < 5)
+                {
+                    if (b2)
+                    {
+                        result += 10;
+                    }
+                    else
+                    {
+                        result -= 10;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public static int DoSomething1(bool b1, bool b2, int i)
+        {
+            // My option
             bool trueTrue = b1 && b2;
             bool trueFalse = b1 && !b2;
             bool falseTrue = !b1 && b2;

@@ -4,6 +4,22 @@
     {
         public static int DoSomething(bool b, int i)
         {
+            var result = i;
+
+            if (b && i > -7 && i < 7)
+            {
+                result = 7 - i;
+            }
+            else if (!b && (i <= -5 || i >= 5))
+            {
+                result = i + 5;
+            }
+
+            return result;
+        }
+
+        public static int DoSomething1(bool b, int i)
+        {
             if (b)
             {
                 if (i >= 0 && i < 7)
