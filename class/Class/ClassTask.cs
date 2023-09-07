@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Class
 {
     public class Rectangle
@@ -45,14 +48,22 @@ namespace Class
         {
             rectangle_array = new Rectangle[n];
         }
+        public ArrayRectangles(IEnumerable<Rectangle> rectangles)
+        {
+            rectangle_array = rectangles.ToArray();
+        }
+        public ArrayRectangles(Rectangle[] rectangles)
+        {
+            rectangle_array = rectangles;
+        }
 
-        public bool AddRectangle()
+        public bool AddRectangle(Rectangle rectangle)
         {
             for (int i = 0; i < rectangle_array.Length; i++)
             {
                 if (rectangle_array[i] is null)
                 {
-                    rectangle_array[i] = new Rectangle();
+                    rectangle_array[i] = rectangle;
                     return true;
                 }
             }
@@ -76,16 +87,16 @@ namespace Class
 
         public int NumberMinPerimeter()
         {
-            int max = 0;
+            int min = 0;
             for (int i = 1; i < rectangle_array.Length; i++)
             {
-                if (rectangle_array[i].Perimeter() < rectangle_array[max].Perimeter())
+                if (rectangle_array[i].Perimeter() < rectangle_array[min].Perimeter())
                 {
-                    max = i;
+                    min = i;
                 }
             }
 
-            return max;
+            return min;
         }
 
         public int NumberSquare()
