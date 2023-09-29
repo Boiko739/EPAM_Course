@@ -34,7 +34,7 @@ namespace ValidationLibrary
             }
             else
             {
-                return returnName;
+                return returnName.Length > 50 ? returnName[..50].Trim() : returnName;
             }
         }
     }
