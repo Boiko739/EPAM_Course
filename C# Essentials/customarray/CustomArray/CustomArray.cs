@@ -54,6 +54,11 @@ namespace CustomArray
         /// <param name="length">Length</param>
         public CustomArray(int first, int length)
         {
+            if (length <= 0)
+            {
+                throw new ArgumentException("Set property in Length should throw ArgumentException " +
+                    "in case of length parameter smaller or equal 0  ");
+            }
             First = first;
             Length = length;
             Array = new T[length];
@@ -71,6 +76,10 @@ namespace CustomArray
             {
                 throw new ArgumentNullException(nameof(list));
             }
+            else if (!list.Any())
+            {
+                throw new ArgumentException("CustomArray can't be created with list without elements ");
+            }
 
             First = first;
             Length = list.Count();
@@ -87,7 +96,7 @@ namespace CustomArray
         /// <exception cref="ArgumentException">Thrown when list without elements </exception>
         public CustomArray(int first, params T[] list)
         {
-            if (list == null)
+            if (list == null )
             {
                 throw new ArgumentNullException(nameof(list));
             }
@@ -112,12 +121,9 @@ namespace CustomArray
         {
             get
             {
-                if (item < First || item > Last)
-                {
-                    throw new ArgumentException("Index is out of the array range.");
-                }
-
-                return Array[item - First];
+                return item < First || item > Last 
+                    ? throw new ArgumentException("Index is out of the array range.") 
+                    : Array[item - First];
             }
             set
             {
@@ -136,7 +142,10 @@ namespace CustomArray
 
         public IEnumerator<T> GetEnumerator()
         {
-            return (IEnumerator<T>)Array.GetEnumerator();
+            foreach (T item in Array)
+            {
+                yield return item;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
