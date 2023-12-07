@@ -55,31 +55,26 @@ namespace Linq
 
         public static IEnumerable<string> Task6(IEnumerable<int> numbers, IEnumerable<string> stringList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
         public static IEnumerable<int> Task7(int k, IEnumerable<int> integerList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
         
         public static IEnumerable<int> Task8(int k, int d, IEnumerable<int> integerList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
         public static IEnumerable<string> Task9(IEnumerable<string> stringList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
         public static IEnumerable<string> Task10(IEnumerable<string> stringList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
@@ -89,33 +84,28 @@ namespace Linq
 
         public static IEnumerable<YearSchoolStat> Task11(IEnumerable<Entrant> nameList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
         public static IEnumerable<NumberPair> Task12(IEnumerable<int> integerList1, IEnumerable<int> integerList2)
         {
-            //TODO :Delete line below and write your own solution
             throw new NotImplementedException();
         }
 
         public static IEnumerable<YearSchoolStat> Task13(IEnumerable<Entrant> nameList, IEnumerable<int> yearList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
         public static IEnumerable<MaxDiscountOwner> Task14(IEnumerable<Supplier> supplierList,
                 IEnumerable<SupplierDiscount> supplierDiscountList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
         public static IEnumerable<CountryStat> Task15(IEnumerable<Good> goodList,
             IEnumerable<StorePrice> storePriceList)
         {
-            //TODO :Delete line below and write your own solution 
             throw new NotImplementedException();
         }
 
