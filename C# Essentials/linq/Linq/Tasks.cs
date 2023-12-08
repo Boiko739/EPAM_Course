@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Linq.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Linq.Objects;
 
 namespace Linq
 {
@@ -17,7 +17,7 @@ namespace Linq
 
         public static IEnumerable<string> Task1(char c, IEnumerable<string> stringList)
         {
-            return stringList.Where(x => 
+            return stringList.Where(x =>
             x[0] == c &&
             x[^1] == c &&
             x.Length > 1);
@@ -35,7 +35,7 @@ namespace Linq
 
         public static IEnumerable<string> Task4(int k, IEnumerable<string> stringList)
         {
-            return stringList.Where(x => 
+            return stringList.Where(x =>
             x.Length == k &&
             char.IsDigit(x[^1])).
             OrderBy(x => x);
@@ -55,27 +55,41 @@ namespace Linq
 
         public static IEnumerable<string> Task6(IEnumerable<int> numbers, IEnumerable<string> stringList)
         {
-            throw new NotImplementedException();
+            return numbers.Select(n => stringList.
+            FirstOrDefault(s => char.IsDigit(s[0]) && s.Length == n) ?? "Not found");
         }
 
         public static IEnumerable<int> Task7(int k, IEnumerable<int> integerList)
         {
-            throw new NotImplementedException();
+            return integerList.Where(x => x % 2 == 0).Except(integerList.Skip(k)).Reverse();
         }
-        
+
         public static IEnumerable<int> Task8(int k, int d, IEnumerable<int> integerList)
         {
-            throw new NotImplementedException();
+            return integerList.TakeWhile(x => x <= d).Union(integerList.Skip(k)).
+                OrderByDescending(x => x);
         }
 
         public static IEnumerable<string> Task9(IEnumerable<string> stringList)
         {
-            throw new NotImplementedException();
+            return stringList.GroupBy(x => x[0]).
+                OrderByDescending(x => x.Sum(x => x.Length)).
+                ThenBy(x => x.Key).
+                Select(x => $"{x.Sum(x => x.Length)}-{x.Key}");
         }
 
         public static IEnumerable<string> Task10(IEnumerable<string> stringList)
         {
-            throw new NotImplementedException();
+            return stringList.GroupBy(s => s.Length).
+                Select(g => new
+                {
+                    Length = g.Key,
+                    LastChars =
+                new string(g.OrderBy(s => s).
+                Select(s => char.ToUpper(s.Last())).ToArray())
+                }).
+                Select(x => x.LastChars).
+                OrderByDescending(x => x.Length);
         }
 
         #endregion
