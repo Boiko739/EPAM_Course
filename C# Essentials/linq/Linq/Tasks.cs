@@ -80,16 +80,11 @@ namespace Linq
 
         public static IEnumerable<string> Task10(IEnumerable<string> stringList)
         {
-            return stringList.GroupBy(s => s.Length).
-                Select(g => new
-                {
-                    Length = g.Key,
-                    LastChars =
-                new string(g.OrderBy(s => s).
-                Select(s => char.ToUpper(s.Last())).ToArray())
-                }).
-                Select(x => x.LastChars).
-                OrderByDescending(x => x.Length);
+            return stringList.GroupBy(word => word.Length).
+                Select(group => group.OrderBy(word => word)).
+                OrderBy(group => group.First(), StringComparer.Ordinal).
+                Select(group => string.Concat(group.Select(word => char.ToUpperInvariant(word.Last())))).
+                OrderByDescending(word => word.Length);
         }
 
         #endregion
