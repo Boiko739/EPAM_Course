@@ -93,29 +93,67 @@ namespace Linq
 
         public static IEnumerable<YearSchoolStat> Task11(IEnumerable<Entrant> nameList)
         {
-            throw new NotImplementedException();
+            return nameList.GroupBy(entrant => entrant.Year).
+                Select(group => new YearSchoolStat()
+                {
+                    Year = group.Key,
+                    NumberOfSchools = group.GroupBy(entrant => entrant.SchoolNumber).
+                        Select(schools => schools.Key).Count()
+                }).
+                OrderBy(stats => stats.NumberOfSchools).ThenBy(stats => stats.Year);
         }
 
         public static IEnumerable<NumberPair> Task12(IEnumerable<int> integerList1, IEnumerable<int> integerList2)
         {
-            throw new NotImplementedException();
+            return integerList1.
+                SelectMany(num1 => integerList2.Where(num2 => num1 % 10 == num2 % 10),
+                (num1, num2) => new NumberPair() { Item1 = num1, Item2 = num2 }).
+                OrderBy(pair => pair.Item1).ThenBy(pair => pair.Item2);
         }
 
         public static IEnumerable<YearSchoolStat> Task13(IEnumerable<Entrant> nameList, IEnumerable<int> yearList)
         {
-            throw new NotImplementedException();
+            return yearList.Select(year => new YearSchoolStat()
+            {
+                Year = year,
+                NumberOfSchools = nameList.Where(info => info.Year == year).GroupBy(info => info.SchoolNumber).Count()
+            }).
+            OrderBy(stat => stat.NumberOfSchools).ThenBy(stat => stat.Year);
         }
 
         public static IEnumerable<MaxDiscountOwner> Task14(IEnumerable<Supplier> supplierList,
                 IEnumerable<SupplierDiscount> supplierDiscountList)
         {
-            throw new NotImplementedException();
+            return supplierList.
+            Join(supplierDiscountList, supplier => supplier.Id, discount => discount.SupplierId,
+            (supplier, discount) => new { supplier, discount }).
+            GroupBy(x => x.discount.ShopName).
+            Select(group => new MaxDiscountOwner()
+            {
+                ShopName = group.Key,
+                Owner = group.Where(x => x.discount.Discount == group.Max(x => x.discount.Discount)).
+                    OrderBy(x => x.supplier.Id).First().supplier,
+                Discount = group.Max(x => x.discount.Discount),
+            }).OrderBy(owner => owner.ShopName);
         }
 
         public static IEnumerable<CountryStat> Task15(IEnumerable<Good> goodList,
             IEnumerable<StorePrice> storePriceList)
         {
-            throw new NotImplementedException();
+            return goodList.GroupJoin(
+             storePriceList, good => good.Id, price => price.GoodId,
+             (good, prices) => new { Good = good, Prices = prices.DefaultIfEmpty() })
+             .SelectMany(
+             x => x.Prices,
+             (x, price) => new { x.Good, Price = price }).
+             GroupBy(x => x.Good.Country, x => x.Price,
+             (key, g) => new CountryStat
+             {
+                 Country = key,
+                 StoresNumber = g.Where(x => x != null).Select(x => x.Shop).Distinct().Count(),
+                 MinPrice = g.Any(x => x != null) ? g.Min(x => x.Price) : 0
+             }).
+             OrderBy(x => x.Country);
         }
 
         #endregion

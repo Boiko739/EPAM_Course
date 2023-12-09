@@ -341,7 +341,7 @@ namespace Linq.Tests
 
         #region Advance
         // UNCOMMENT TO CHECK ADVANCED PART
-        /*
+
         [Test]
         public void Task11Test()
         {
@@ -686,7 +686,6 @@ namespace Linq.Tests
                         new CountryStat{Country = "Ukraine", MinPrice = 1.20M, StoresNumber = 7},
                     });
         }
-         */
 
         #endregion
 
