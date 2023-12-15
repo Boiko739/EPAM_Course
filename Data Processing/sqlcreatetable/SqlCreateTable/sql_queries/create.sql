@@ -1,12 +1,3 @@
-
-DROP TABLE IF EXISTS TaskStatusUpdates;
-DROP TABLE IF EXISTS EmployeeTasks;
-DROP TABLE IF EXISTS Tasks;
-DROP TABLE IF EXISTS EmployeeProjects;
-DROP TABLE IF EXISTS Positions;
-DROP TABLE IF EXISTS Projects;
-DROP TABLE IF EXISTS Employees;
-
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     FirstName VARCHAR(100) NOT NULL,
@@ -17,7 +8,7 @@ CREATE TABLE Projects (
     ProjectID INT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,
     CreationDate DATE NOT NULL,
-    Status VARCHAR(10) CHECK (Status IN ('open', 'closed')),
+    Status VARCHAR(10),
     ClosureDate DATE
 );
 
@@ -41,7 +32,7 @@ CREATE TABLE Tasks (
     ProjectID INT,
     Description VARCHAR(255) NOT NULL,
     Deadline DATE NOT NULL,
-    Status VARCHAR(20) CHECK (Status IN ('open', 'completed', 'requires revision', 'closed')),
+    Status VARCHAR(20),
     FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
 );
 
@@ -55,7 +46,7 @@ CREATE TABLE EmployeeTasks (
 
 CREATE TABLE TaskStatusUpdates (
     TaskID INT,
-    Status VARCHAR(20) CHECK (Status IN ('open', 'completed', 'requires revision', 'closed')),
+    Status VARCHAR(20),
     UpdateDate DATE NOT NULL,
     UpdatedBy INT,
     PRIMARY KEY (TaskID, UpdateDate),
